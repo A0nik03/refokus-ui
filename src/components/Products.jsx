@@ -71,7 +71,7 @@ const Products = () => {
     }
   ];
 
-  const [pos, setPos] = useState(null);
+  const [pos, setPos] = useState(0);
 
   const mover = (val) => {
     setPos(val * 23);
