@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Product from "./product";
+import Product from "./Product";
 import { motion } from "framer-motion";
 import assets from "../assets/Products/assets";
 
