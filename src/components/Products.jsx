@@ -68,46 +68,49 @@ const Products = () => {
         "Arquivo default bookkeeping shop hahile trans Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, quas?",
       live: true,
       case: true,
-    }
+    },
   ];
 
   const [pos, setPos] = useState(0);
 
   const mover = (val) => {
-    setPos(val * 23);
+    setPos(val * 18);
   };
 
   return (
-    <div className="mt-32 relative">
+    <div className="mt-20 relative">
       {products.map((elem, index) => {
-        return <Product key={index} count={index} data={elem} mover={mover} />;
+        return (
+          <Product
+            key={index}
+            count={index}
+            data={elem}
+            mover={mover}
+            color={"#7443ff"}
+          />
+        );
       })}
       <div className="absolute top-0 w-full h-full pointer-events-none">
         {products.map(
           (elem, index) =>
-            index === pos / 23 && (
-              <motion.div
+            index === pos / 18 && (
+              <motion.video
                 key={index}
-                initial={{ y: index * 23 + `rem` }}
-                animate={{ y: index === pos * 23 ? 0 : index * 23 + `rem` }}
-                transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
-                className={`absolute w-[32rem] h-[23rem] left-[26%] overflow-hidden rounded-lg ${
-                  index * 23 === pos ? "shadow-xl scale-105" : ""
-                }`}
+                src={elem.url}
+                autoPlay
+                loop
+                muted
+                initial={{ x: "-50%", y: pos + `rem` }}
+                animate={{ y: pos + `rem` }}
+                transition={{ ease: [0.76, 0, 0.24, 1], duration: 2 }}
+                className="absolute w-[28rem] h-[18rem] left-[46%] object-cover overflow-hidden"
               >
                 <motion.div
-                  key={index}
-                  className="absolute w-full h-full bg-white rounded-lg overflow-hidden"
-                >
-                  <video
-                    src={elem.url}
-                    autoPlay
-                    loop
-                    muted
-                    className="w-full h-full object-cover rounded-lg"
-                  />
-                </motion.div>
-              </motion.div>
+                  transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5}}
+                  animate={{ y: -pos + `rem` }}
+                  className="w-full h-full bg-sky-100"
+                ></motion.div>
+              </motion.video>
             )
         )}
       </div>
