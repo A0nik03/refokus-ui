@@ -37,6 +37,38 @@ const Products = () => {
       live: true,
       case: true,
     },
+    {
+      title: "arqitel",
+      url: assets.intenseye,
+      description:
+        "Arquivo default bookkeeping shop hahile trans Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, quas?",
+      live: true,
+      case: false,
+    },
+    {
+      title: "TTR",
+      url: assets.ttr,
+      description:
+        "Arquivo default bookkeeping shop hahile trans Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, quas?",
+      live: true,
+      case: true,
+    },
+    {
+      title: "YIR 2022",
+      url: assets.yir,
+      description:
+        "Arquivo default bookkeeping shop hahile trans Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, quas?",
+      live: true,
+      case: false,
+    },
+    {
+      title: "Yahoo!",
+      url: assets.yahoo,
+      description:
+        "Arquivo default bookkeeping shop hahile trans Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, quas?",
+      live: true,
+      case: true,
+    }
   ];
 
   const [pos, setPos] = useState(null);
